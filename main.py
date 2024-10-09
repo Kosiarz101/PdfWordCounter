@@ -8,14 +8,6 @@ import pdf_processor
 
 wordDict = {}
 
-def print_dict(z: dict):
-    sorted_dict = dict(sorted(z.items(), key=lambda item: item[1], reverse=True))
-    for key, value in sorted_dict.items():
-        print(f"{key}: {value}")
-
-def print_list(y):
-    list(map(lambda x: print(x), y))
-
 argument_parser = argparse.ArgumentParser(
                     prog='PdfWordCounter',
                     description='Program counts all words in pdf file and calculates it\'s word distribution')
