@@ -19,10 +19,10 @@ def count_words(pages) -> WordDistribution:
     word_distribution = WordDistribution(counted_words_dict, allWordsCounter)           
     return word_distribution
 
-def calculate_probabilities(word_distribution: WordDistribution) -> WordDistribution:
+def calculate_probabilities(word_distribution: WordDistribution, precision: int) -> WordDistribution:
     for word, word_stats in word_distribution.counted_words_dict.items():
-        word_stats.probability = (word_stats.quantity / word_distribution.allWordsCount) * 100
-        word_stats.probability = round(word_stats.probability, 3)  
+        word_stats.probability = (word_stats.quantity / word_distribution.all_words_count) * 100
+        word_stats.probability = round(word_stats.probability, precision)  
     return word_distribution
 
 def _add_word_to_dict(word: str, wordDict: Dict[str, WordStats]) -> str:
